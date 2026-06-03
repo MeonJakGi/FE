@@ -76,6 +76,7 @@ export interface OrderItem {
   totalQuantity: number;
   shelfLabel: string;
   slotLabel: string;
+  category?: string | null;
   isOrderCompleted: boolean;
   stockId?: number;
   reorderPoint: number | null;

@@ -335,6 +335,9 @@ const mapOrderItem = (raw: AnyRecord): OrderItem => {
       '',
     ),
 
+    category:
+      toString(pick<Primitive>(raw, ['category', 'categoryName', 'category_name'], '')) || null,
+
     isOrderCompleted: Boolean(
       pick<Primitive>(raw, ['isOrderCompleted', 'is_order_completed'], false),
     ),

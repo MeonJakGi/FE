@@ -96,13 +96,7 @@ export default function OrderPage({ storeId = 1 }: Props) {
         item.productName.toLowerCase().includes(keyword) ||
         String(item.skuCode).toLowerCase().includes(keyword);
 
-      /**
-       * 백엔드 OrderItemResponse에는 category가 없음.
-       * 그래서 현재는 카테고리 필터를 정확히 적용할 수 없음.
-       * 일단 전체 통과시키고, 나중에 백엔드 DTO에 category 추가하면
-       * item.category === category로 바꾸면 됨.
-       */
-      const cOk = category.trim().length === 0;
+      const cOk = category.trim().length === 0 || item.category === category;
 
       return qOk && cOk;
     });
